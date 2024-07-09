@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de cuentas</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Lista de Chips</h1>
+            
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Chip N°</th>
+                    <th scope="col">Compañía</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Contraseña</th>
+                    <th scope="col">Usuario Plataforma</th>
+                    <th scope="col">Contraseña Plataforma</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for chip in chips %}
+                <tr>
+                    <td>{{ chip.numero_chip }}</td>
+                    <td>{{ chip.compania }}</td>
+                    <td>{{ chip.numero }}</td>
+                    <td>{{ chip.correo }}</td>
+                    <td>{{ chip.contraseña }}</td>
+                    <td>{{ chip.usuario_plataforma }}</td>
+                    <td>{{ chip.contraseña_plataforma }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
